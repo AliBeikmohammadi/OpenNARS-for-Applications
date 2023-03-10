@@ -4,9 +4,15 @@ import pandas as pd
 import numpy as np
 import random
 
+seed_num = 1
+try:
+    seed_num = int(sys.argv[1]) 
+except:
+    None
+
 max_steps = -1
 try:
-    max_steps = int(sys.argv[1])
+    max_steps = int(sys.argv[2]) #int(sys.argv[1])
 except:
     None
 
@@ -19,7 +25,7 @@ min_epsilon = 0.01
 decay = 0.01         
 
 #Fixing seed for reproducibility
-np.random.seed(1) 
+np.random.seed(seed_num) 
 #Loading and rendering the gym environment
 #Each time step incurs -1 reward, and stepping into the cliff incurs -100 reward. done=True if reach the goal    
 #Setup environment:
@@ -41,7 +47,7 @@ successes_episode = 0
 iteration = 0
 results = []
 #Similate for 100000 steps:
-obs = env.reset(seed=1) #v1
+obs = env.reset(seed=seed_num) #v1
 for i in range(0, 100000):   
     #Choosing an action given the states based on a random number
     exp_exp_tradeoff = random.uniform(0, 1) 
@@ -74,12 +80,12 @@ for i in range(0, 100000):
         episode_count += 1
         reward_episode = 0
         iteration = 0
-        obs = env.reset(seed=1) #v1
+        obs = env.reset(seed=seed_num) #v1
     #env.render()
     if (timestep+2 >= max_steps and max_steps != -1):
         break
 env.close()
 data = pd.DataFrame(results)
 data.columns = ["iteration", "successes", "successes_episode", "reward_episode" , "episode_count", "random_act", "timestep", "epsilon"]
-data.to_csv('CW_v1_Q.csv', index = False)
+data.to_csv('CW_v1_Q_'+str(seed_num)+'.csv', index = False)
 print("The results saved")

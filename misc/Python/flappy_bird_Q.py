@@ -6,9 +6,15 @@ import random
 import flappy_bird_gym
 import time
 
+seed_num = 1
+try:
+    seed_num = int(sys.argv[1]) 
+except:
+    None
+
 max_steps = -1
 try:
-    max_steps = int(sys.argv[1])
+    max_steps = int(sys.argv[2]) #int(sys.argv[1])
 except:
     None
 
@@ -21,7 +27,7 @@ min_epsilon = 0.01
 decay = 0.01         
 
 #Fixing seed for reproducibility
-np.random.seed(1) 
+np.random.seed(seed_num) 
 #Loading and rendering the gym environment
 #Setup environment:
 #obs:
@@ -58,7 +64,7 @@ reward_episode = 0
 iteration = 0
 results = []
 #Similate for 100000 steps:
-env.seed(1) #v1
+env.seed(seed_num) #v1
 obs = env.reset() #v1
 obs = observationToEvent(obs)
 for i in range(0, 100000):   
@@ -93,7 +99,7 @@ for i in range(0, 100000):
         episode_count += 1
         reward_episode = 0
         iteration = 0
-        env.seed(1) #v3
+        env.seed(seed_num) #v3
         obs = env.reset() #v1
         obs = observationToEvent(obs)
     #env.render()
@@ -103,5 +109,5 @@ for i in range(0, 100000):
 env.close()
 data = pd.DataFrame(results)
 data.columns = ["iteration", "successes", "reward_episode" , "episode_count", "random_act", "timestep", "epsilon"]
-data.to_csv('FB_v1_Q.csv', index = False)
+data.to_csv('FB_v1_Q_'+str(seed_num)+'.csv', index = False)
 print("The results saved")

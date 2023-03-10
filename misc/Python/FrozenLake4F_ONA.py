@@ -3,9 +3,15 @@ import NAR
 import sys
 import pandas as pd
 
+seed_num = 1
+try:
+    seed_num = int(sys.argv[1]) 
+except:
+    None
+
 max_steps = -1
 try:
-    max_steps = int(sys.argv[1])
+    max_steps = int(sys.argv[2]) #int(sys.argv[1])
 except:
     None
 
@@ -56,7 +62,7 @@ successes_episode = 0
 iteration = 0
 results = []
 #Similate for 100000 steps:
-obs = env.reset(seed=1) #v1
+obs = env.reset(seed=seed_num) #v3) #v1
 NAR.AddInput(observationToEvent(obs)) #v1
 for i in range(0, 100000):
     default_action = env.action_space.sample()  # random action  ###!!
@@ -96,7 +102,7 @@ for i in range(0, 100000):
         NAR.AddInput("20") #don't temporally relate observations across reset
         #env.seed(1337+i) #v1
         #env.reset() #v1
-        obs = env.reset(seed=1) #v1
+        obs = env.reset(seed=seed_num) #v1
         NAR.AddInput(observationToEvent(obs)) #v1
     #env.render()
     if (timestep+2 >= max_steps and max_steps != -1):
@@ -104,5 +110,5 @@ for i in range(0, 100000):
 env.close()
 data = pd.DataFrame(results)
 data.columns = ["iteration", "successes", "successes_episode", "reward_episode" , "episode_count", "random_act", "timestep"]
-data.to_csv('FL_4F_v1_ONA.csv', index = False)
+data.to_csv('FL_4F_v1_ONA_'+str(seed_num)+'.csv', index = False)
 print("The results saved")

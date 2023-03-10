@@ -5,9 +5,15 @@ import time
 import flappy_bird_gym
 import pandas as pd
 
+seed_num = 1
+try:
+    seed_num = int(sys.argv[1]) 
+except:
+    None
+
 max_steps = -1
 try:
-    max_steps = int(sys.argv[1])
+    max_steps = int(sys.argv[2]) #int(sys.argv[1])
 except:
     None
 
@@ -47,6 +53,7 @@ reward_episode = 0
 iteration = 0
 results = []
 #Similate for 100000 steps:
+env.seed(seed_num) #v3 added
 obs = env.reset() #v3
 NAR.AddInput(observationToEvent(obs)) #v3
 for i in range(0, 100000):
@@ -86,7 +93,7 @@ for i in range(0, 100000):
         NAR.AddInput("20") #don't temporally relate observations across reset
         #env.seed(1337+i) #v3
         #env.reset() #v3
-        env.seed(1) #v3
+        env.seed(seed_num) #v3
         obs = env.reset() #v3
         NAR.AddInput(observationToEvent(obs)) #v3
     #env.render()
@@ -96,5 +103,5 @@ for i in range(0, 100000):
 env.close()
 data = pd.DataFrame(results)
 data.columns = ["iteration", "successes", "reward_episode" , "episode_count", "random_act", "timestep"]
-data.to_csv('FB_v1_ONA.csv', index = False)
+data.to_csv('FB_v1_ONA_'+str(seed_num)+'.csv', index = False)
 print("The results saved")
