@@ -7,7 +7,7 @@ Implementation of **ONA vs. $Q$-Learning**, as presented in:
 * Our implementation is entirely compatible with ONA since it is developed based on. Find the instructions [here](https://github.com/opennars/OpenNARS-for-Applications).
 
 ## How to Run Experiments
-### CliffWalking-v0
+### [CliffWalking-v0](https://gymnasium.farama.org/environments/toy_text/cliff_walking/)
 > The script below runs a new test using Q-Learning on the CliffWalking-v0 environment with customized seed and iteration number.
 ```
 python Cliff_Walk_Q.py [seed number] [iteration number]
@@ -16,7 +16,7 @@ python Cliff_Walk_Q.py [seed number] [iteration number]
 ```
 python Cliff_Walk_ONA.py [seed number] [iteration number]
 ```
-### Taxi-v3
+### [Taxi-v3](https://gymnasium.farama.org/environments/toy_text/taxi/)
 > The script below runs a new test using Q-Learning on the Taxi-v3 environment with customized seed and iteration number.
 ```
 python Taxi_Q.py [seed number] [iteration number]
@@ -25,7 +25,7 @@ python Taxi_Q.py [seed number] [iteration number]
 ```
 python Taxi_ONA.py [seed number] [iteration number]
 ```
-### FrozenLake-v1 4x4
+### [FrozenLake-v1 4x4](https://gymnasium.farama.org/environments/toy_text/frozen_lake/)
 > The script below runs a new test using Q-Learning on the FrozenLake-v1 4x4 environment with customized seed and iteration number.
 ```
 python FrozenLake4F_Q.py [seed number] [iteration number]
@@ -34,7 +34,7 @@ python FrozenLake4F_Q.py [seed number] [iteration number]
 ```
 python FrozenLake4F_ONA.py [seed number] [iteration number]
 ```
-### FrozenLake-v1 4x4 Slippery
+### [FrozenLake-v1 4x4 Slippery](https://gymnasium.farama.org/environments/toy_text/frozen_lake/)
 > The script below runs a new test using Q-Learning on the FrozenLake-v1 4x4 Slippery environment with customized seed and iteration number.
 ```
 python FrozenLake4T_Q.py [seed number] [iteration number]
@@ -43,7 +43,7 @@ python FrozenLake4T_Q.py [seed number] [iteration number]
 ```
 python FrozenLake4T_ONA.py [seed number] [iteration number]
 ```
-### FrozenLake-v1 8x8
+### [FrozenLake-v1 8x8](https://gymnasium.farama.org/environments/toy_text/frozen_lake/)
 > The script below runs a new test using Q-Learning on the FrozenLake-v1 8x8 environment with customized seed and iteration number.
 ```
 python FrozenLake8F_Q.py [seed number] [iteration number]
@@ -52,7 +52,7 @@ python FrozenLake8F_Q.py [seed number] [iteration number]
 ```
 python FrozenLake8F_ONA.py [seed number] [iteration number]
 ```
-### FrozenLake-v1 8x8 Slippery
+### [FrozenLake-v1 8x8 Slippery](https://gymnasium.farama.org/environments/toy_text/frozen_lake/)
 > The script below runs a new test using Q-Learning on the FrozenLake-v1 8x8 Slippery environment with customized seed and iteration number.
 ```
 python FrozenLake8T_Q.py [seed number] [iteration number]
@@ -61,7 +61,7 @@ python FrozenLake8T_Q.py [seed number] [iteration number]
 ```
 python FrozenLake8T_ONA.py [seed number] [iteration number]
 ```
-### FlappyBird-v0
+### [FlappyBird-v0](https://github.com/sourabhv/FlapPyBird)
 > The script below runs a new test using Q-Learning on the FlappyBird-v0 environment with customized seed and iteration number.
 ```
 python flappy_bird_Q.py [seed number] [iteration number]
@@ -71,41 +71,6 @@ python flappy_bird_Q.py [seed number] [iteration number]
 python flappy_bird_ONA.py [seed number] [iteration number]
 ```
         
-        
-### OPTIMAL CONTROL PROBLEMS WITH CONSTRAINTS: Optimal Temperature Control with Constraint
-> The script below runs a new test on the Optimal Temperature Control with Constraint environment with customized settings.
-```
-python Optimal_Temperature_Control_with_Constraint.py -h
-
-
-usage: Optimal_Temperature_Control_with_Constraint.py [-h] [--e E] [--b B] [--E E] [--w W] [--save_dir SAVE_DIR] [--d [D ...]]
-
-optional arguments:
-  -h, --help           show this help message and exit
-  --e E                Total episodes to train through all environments; default 8000
-  --b B                initial_beta; default 1 if 0: only R^T, if (0, 1] adaptive_beta*R^A + (1-adaptive_beta)*R^T where beta = max((E-e)*initial_beta/E),0)
-  --E E                Episode in which the beta is zero; default 4000
-  --w W                omega, weighting values to the control objective; default 1
-  --save_dir SAVE_DIR  Save Directory; default ./Results/Temperature_Control/
-  --d [D ...]          debug_level; default False False:nothing print True:print result per each episode
-```
-### OPTIMAL CONTROL PROBLEMS WITH CONSTRAINTS: A Coupled Four Tank MIMO System
-> The script below runs a new test on the Coupled Four Tank MIMO System environment with customized settings.
-```
-python A_Coupled_Four_Tank_MIMO_System.py -h
-
-
-usage: A_Coupled_Four_Tank_MIMO_System.py [-h] [--e E] [--b B] [--E E] [--w W] [--save_dir SAVE_DIR] [--d [D ...]]
-
-optional arguments:
-  -h, --help           show this help message and exit
-  --e E                Total episodes to train through all environments; default 30000
-  --b B                initial_beta; default 0.5 if 0: only R^T, if (0, 1] adaptive_beta*R^A + (1-adaptive_beta)*R^T where beta = max((E-e)*initial_beta/E),0)
-  --E E                Episode in which the beta is zero; default 3000
-  --w W                omega, weighting values to the control objective; default 1
-  --save_dir SAVE_DIR  Save Directory; default ./Results/Four_Tank/
-  --d [D ...]          debug_level; default False False:nothing print True:print result per each episode
-```
 # Examples
 ## Plots
 ### Random Walk
