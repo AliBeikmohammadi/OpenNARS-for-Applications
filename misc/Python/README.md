@@ -4,30 +4,74 @@ Implementation of **ONA vs. $Q$-Learning**, as presented in:
 
 
 # Usage
-
-> To run a new test .
-* Our implementation is entirely compatible with ONA since it is developed based on. Find the instructions here.
+* Our implementation is entirely compatible with ONA since it is developed based on. Find the instructions [here](https://github.com/opennars/OpenNARS-for-Applications).
 
 ## How to Run Experiments
-### AN ILLUSTRATION: Random Walk
-> The script below runs a new test on the Random Walk environment with customized settings.
+### CliffWalking-v0
+> The script below runs a new test using Q-Learning on the CliffWalking-v0 environment with customized seed and iteration number.
 ```
-python RandomWalk.py -h
-
-
-usage: RandomWalk.py [-h] [--N N] [--E E] [--R R] [--b [B ...]] [--l [L ...]] [--d D] [--save_dir SAVE_DIR]
-
-optional arguments:
-  -h, --help           show this help message and exit
-  --N N                Number of states (including the ending states); default 5
-  --E E                Number of episodes per each test; default 100
-  --R R                Number of independent test; default 100
-  --b [B ...]          initial_beta; default [0, 1, 100] if 0: only R^T, if 100: only only R^A, if (0, 1) if adaptive beta*R^A + (1-adaptive beta)*R^T where adaptive beta =
-                       initial_beta*((lambda)**episode)
-  --l [L ...]          lambda; default [0.1, 0.5, 0.9]
-  --d D                debug_level; default 0 0:nothing print 1:print average result over runs, 2:print result after end of each episode, 3:print all information, like actions and reward in each state
-  --save_dir SAVE_DIR  Save Directory; default ./Results/RandomWalk/
+python Cliff_Walk_Q.py [seed number] [iteration number]
 ```
+> The script below runs a new test using ONA on the CliffWalking-v0 environment with customized seed and iteration number.
+```
+python Cliff_Walk_ONA.py [seed number] [iteration number]
+```
+### Taxi-v3
+> The script below runs a new test using Q-Learning on the Taxi-v3 environment with customized seed and iteration number.
+```
+python Taxi_Q.py [seed number] [iteration number]
+```
+> The script below runs a new test using ONA on the Taxi-v3 environment with customized seed and iteration number.
+```
+python Taxi_ONA.py [seed number] [iteration number]
+```
+### FrozenLake-v1 4x4
+> The script below runs a new test using Q-Learning on the FrozenLake-v1 4x4 environment with customized seed and iteration number.
+```
+python FrozenLake4F_Q.py [seed number] [iteration number]
+```
+> The script below runs a new test using ONA on the FrozenLake-v1 4x4 environment with customized seed and iteration number.
+```
+python FrozenLake4F_ONA.py [seed number] [iteration number]
+```
+### FrozenLake-v1 4x4 Slippery
+> The script below runs a new test using Q-Learning on the FrozenLake-v1 4x4 Slippery environment with customized seed and iteration number.
+```
+python FrozenLake4T_Q.py [seed number] [iteration number]
+```
+> The script below runs a new test using ONA on the FrozenLake-v1 4x4 Slippery environment with customized seed and iteration number.
+```
+python FrozenLake4T_ONA.py [seed number] [iteration number]
+```
+### FrozenLake-v1 8x8
+> The script below runs a new test using Q-Learning on the FrozenLake-v1 8x8 environment with customized seed and iteration number.
+```
+python FrozenLake8F_Q.py [seed number] [iteration number]
+```
+> The script below runs a new test using ONA on the FrozenLake-v1 8x8 environment with customized seed and iteration number.
+```
+python FrozenLake8F_ONA.py [seed number] [iteration number]
+```
+### FrozenLake-v1 8x8 Slippery
+> The script below runs a new test using Q-Learning on the FrozenLake-v1 8x8 Slippery environment with customized seed and iteration number.
+```
+python FrozenLake8T_Q.py [seed number] [iteration number]
+```
+> The script below runs a new test using ONA on the FrozenLake-v1 8x8 Slippery environment with customized seed and iteration number.
+```
+python FrozenLake8T_ONA.py [seed number] [iteration number]
+```
+### FlappyBird-v0
+> The script below runs a new test using Q-Learning on the FlappyBird-v0 environment with customized seed and iteration number.
+```
+python flappy_bird_Q.py [seed number] [iteration number]
+```
+> The script below runs a new test using ONA on the FlappyBird-v0 environment with customized seed and iteration number.
+```
+python flappy_bird_ONA.py [seed number] [iteration number]
+```
+        
+        
 ### OPTIMAL CONTROL PROBLEMS WITH CONSTRAINTS: Optimal Temperature Control with Constraint
 > The script below runs a new test on the Optimal Temperature Control with Constraint environment with customized settings.
 ```
