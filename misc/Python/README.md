@@ -61,7 +61,7 @@ python FrozenLake8T_Q.py [seed number] [iteration number]
 ```
 python FrozenLake8T_ONA.py [seed number] [iteration number]
 ```
-### [FlappyBird-v0](https://github.com/sourabhv/FlapPyBird)
+### [FlappyBird-v0](https://github.com/Talendar/flappy-bird-gym)
 > The script below runs a new test using Q-Learning on the FlappyBird-v0 environment with customized seed and iteration number.
 ```
 python flappy_bird_Q.py [seed number] [iteration number]
