@@ -1,6 +1,6 @@
 # ONA vs. $Q$-Learning
 Implementation of **ONA vs. $Q$-Learning**, as presented in:
-* Comparing NARS and Reinforcement Learning: An Analysis of ONA and $Q$-Learning Algorithms. Submitted to the 16th AGI Conference (AGI-23), Stockholm, Sweden, June 16 - June 19, 2023.
+* Comparing NARS and Reinforcement Learning: An Analysis of ONA and $Q$-Learning Algorithms. In Proc. of the 16th AGI Conference (AGI-23), Stockholm, Sweden, June 16 - June 19, 2023.
 
 
 # Usage
@@ -93,10 +93,23 @@ python plotresults_v3.py
 ```
 
 # Citation
-* submitted to the 16th AGI Conference (AGI-23), Stockholm, Sweden, June 16 - June 19, 2023.
+* In Proc. of the 16th AGI Conference (AGI-23), Stockholm, Sweden, June 16 - June 19, 2023.
 
 
 Please cite the accompanied paper, if you find this useful:
 ```
-To be completed
+@InProceedings{BeikmohammadiONA,
+author="Beikmohammadi, Ali
+and Magn{\'u}sson, Sindri",
+editor="Hammer, Patrick
+and Alirezaie, Marjan
+and Stranneg{\aa}rd, Claes",
+title="Comparing NARS and Reinforcement Learning: An Analysis of ONA and Q-Learning Algorithms",
+booktitle="Artificial General Intelligence",
+year="2023",
+publisher="Springer Nature Switzerland",
+address="Cham",
+pages="21--31",
+isbn="978-3-031-33469-6"
+}
 ```
